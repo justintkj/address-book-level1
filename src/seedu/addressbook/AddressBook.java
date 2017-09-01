@@ -616,12 +616,12 @@ public class AddressBook {
         String inputLine = SCANNER.nextLine();
         // silently consume all blank and comment lines
         while (inputLine.trim().isEmpty() || inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER) {
-            inputLine = CommandGetNextLine();
+            inputLine = commandGetNextLine();
         }
         return inputLine;
     }
 
-    private static String CommandGetNextLine() {
+    private static String commandGetNextLine() {
         String inputLine;
         inputLine = SCANNER.nextLine();
         return inputLine;
@@ -708,7 +708,8 @@ public class AddressBook {
      * @return the actual person object in the last shown person listing
      */
     private static String[] getPersonByLastVisibleIndex(int lastVisibleIndex) {
-       return latestPersonListingView.get(lastVisibleIndex - DISPLAYED_INDEX_OFFSET);
+        String[]lastPerson = latestPersonListingView.get(lastVisibleIndex - DISPLAYED_INDEX_OFFSET);
+       return lastPerson;
     }
 
 
