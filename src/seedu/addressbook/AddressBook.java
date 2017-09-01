@@ -615,8 +615,14 @@ public class AddressBook {
         String inputLine = SCANNER.nextLine();
         // silently consume all blank and comment lines
         while (inputLine.trim().isEmpty() || inputLine.trim().charAt(0) == INPUT_COMMENT_MARKER) {
-            inputLine = SCANNER.nextLine();
+            inputLine = CommandGetNextLine();
         }
+        return inputLine;
+    }
+
+    private static String CommandGetNextLine() {
+        String inputLine;
+        inputLine = SCANNER.nextLine();
         return inputLine;
     }
 
